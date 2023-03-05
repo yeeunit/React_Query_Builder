@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ImageListMUI from "./ImageListMUI";
+import ImageListMUI from "./ImageList";
 
 const MovieList = () => {
   const navigate = useNavigate();

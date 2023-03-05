@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 // 2) Get a reference to the div with ID root
 const el = document.getElementById("root");
@@ -12,9 +13,12 @@ const root = ReactDOM.createRoot(el);
 
 // 4) Create a component (App.js)
 // 5) Show the component on the screen
+const queryClient = new QueryClient();
 
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </QueryClientProvider>
 );

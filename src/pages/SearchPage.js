@@ -1,5 +1,4 @@
 import React from "react";
-import ImageListMUI from "../components/ImageListMUI";
 import QueryBuilderComponent from "../components/QueryBuilder";
 
 const SearchPage = () => {
