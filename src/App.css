@@ -102,6 +102,12 @@ h4 {
   line-height: 30px;
 }
 
+.ruleGroup-body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  /* align-items: center; */
+}
+
 @font-face {
   font-family: "Jamsil";
   src: url(../public/fonts/Jamsil.otf);

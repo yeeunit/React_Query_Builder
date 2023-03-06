@@ -1,6 +1,7 @@
 // import { Button } from "@mui/material";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { formatQuery, QueryBuilder } from "react-querybuilder";
 import "react-querybuilder/dist/query-builder.scss";
 import { useQuery } from "react-query";
@@ -44,7 +45,7 @@ const fetchBooks = async (query) => {
   return response.data;
 };
 
-const QueryBuilderComponent = () => {
+const QueryBuilder2 = () => {
   const [query, setQuery] = useState(null);
 
   // const [query, setQuery] = useState({
@@ -107,4 +108,4 @@ const QueryBuilderComponent = () => {
   );
 };
 
-export default QueryBuilderComponent;
+export default QueryBuilder2;

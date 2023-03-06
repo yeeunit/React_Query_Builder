@@ -1,11 +1,13 @@
 import React from "react";
-import QueryBuilderComponent from "../components/QueryBuilder";
+import QueryBuilder1 from "../components/QueryBuilder1";
+import QueryBuilder2 from "../components/QueryBuilder2";
 
 const SearchPage = () => {
   return (
     <div className="search_page">
       <div className="page_title">Search Page</div>
-      <QueryBuilderComponent />
+      <QueryBuilder1 />
+      {/* <QueryBuilder2 /> */}
     </div>
   );
 };

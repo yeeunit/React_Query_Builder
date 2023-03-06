@@ -1,0 +1,17 @@
+@import "react-querybuilder/dist/query-builder.css";
+
+body {
+  background-color: #ffffff;
+}
+pre {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  white-space: pre-wrap;
+}
+
+.react-datepicker-wrapper input {
+  /* Widen the input to show both dates */
+  width: 180px;
+}
