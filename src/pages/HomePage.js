@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AddBox from "../components/AddBox.js";
 import MovieList from "../components/MovieList";
 import NestedBox from "../components/NestedBox.js/index";
+import TestBox from "../components/TestBox.js/index.js";
 import TodoList from "../components/TodoList.js";
 
 const HomePage = () => {
@@ -62,10 +63,10 @@ const HomePage = () => {
             {boxes}
           </div>
         </div> */}
-
+        <TestBox />
+        <NestedBox />
         <AddBox />
         <TodoList />
-        <NestedBox />
       </div>
     </>
   );

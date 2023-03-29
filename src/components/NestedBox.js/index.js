@@ -1,9 +1,33 @@
 import React, { useState } from "react";
+import ObtionWrap from "./ObtionWrap";
 import * as A from "./style";
 
 const NestedBox = () => {
-  const [boxes, setBoxes] = useState([]);
+  const [rules, setRules] = useState([]);
+  const handleAddRule = () => {
+    setRules([...rules, []]);
+  };
 
+  const handleRemoveRule = (index) => {
+    const newRules = [...rules];
+    newRules.splice(index, 1);
+    setRules(newRules);
+  };
+
+  //
+  const [rules2, setRules2] = useState([]);
+  const handleAddRule2 = () => {
+    setRules2([...rules2, []]);
+  };
+
+  const handleRemoveRule2 = (index) => {
+    const newRules2 = [...rules2];
+    newRules2.splice(index, 1);
+    setRules2(newRules2);
+  };
+  //
+
+  const [boxes, setBoxes] = useState([]);
   const handleAddBox = () => {
     setBoxes([...boxes, []]);
   };
@@ -24,37 +48,39 @@ const NestedBox = () => {
     <>
       <A.Wrapper>
         <A.BtnWrap>
-          <A.RuleBtn>Rule</A.RuleBtn>
+          <A.RuleBtn onClick={handleAddRule}>Add Rule</A.RuleBtn>
           <A.GroupBtn onClick={handleAddBox}> Add Group </A.GroupBtn>
         </A.BtnWrap>
 
         <A.BuilderWrap>
-          <A.OptionWrap>
-            <A.OptionSelect>
-              <A.Option>1</A.Option>
-              <A.Option>2</A.Option>
-              <A.Option>3</A.Option>
-            </A.OptionSelect>
-
-            <A.OperatorSelect>
-              <A.Option>a</A.Option>
-              <A.Option>b</A.Option>
-              <A.Option>c</A.Option>
-            </A.OperatorSelect>
-            <A.Input />
-            <A.RemoveBtn>x</A.RemoveBtn>
-          </A.OptionWrap>
+          {rules.map((rule, index) => (
+            <div key={index}>
+              <ObtionWrap />
+              <A.RemoveBtn onClick={() => handleRemoveRule(index)}>
+                X
+              </A.RemoveBtn>
+            </div>
+          ))}
 
           {boxes.map((nestedBoxes, index) => (
             <A.NewRuleBox key={index}>
-              <A.RuleBtn onClick={() => handleAddNestedBox(index)}>
-                + Rule
-              </A.RuleBtn>
-              <A.GroupBtn onClick={handleAddBox}>+ Group</A.GroupBtn>
+              <A.RuleBtn onClick={handleAddRule2}>+Rule</A.RuleBtn>
+              <A.GroupBtn onClick={() => handleAddNestedBox(index)}>
+                + Group
+              </A.GroupBtn>
 
               <A.RemoveBtn onClick={() => handleRemoveBox(index)}>
                 X
               </A.RemoveBtn>
+
+              {rules2.map((rule, index) => (
+                <div key={index}>
+                  <ObtionWrap />
+                  <A.RemoveBtn onClick={() => handleRemoveRule2(index)}>
+                    X
+                  </A.RemoveBtn>
+                </div>
+              ))}
 
               <A.InnerGroupBox>
                 {nestedBoxes.map((_, nestedIndex) => (
